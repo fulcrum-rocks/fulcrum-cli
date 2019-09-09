@@ -2,12 +2,16 @@
   "name": "fulcrum-cli",
   "version": "0.0.1",
   "description": "Fulcrum Rocks cli",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "npm test && npm run lint",
+    "prepare": "npm run build",
+    "postversion": "git push && git push --tags"
   },
   "files": [
     "lib/**/*"
