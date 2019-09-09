@@ -1,5 +1,5 @@
 function helloFulcrum() {
-  console.log("Hello Fulcrum");
+  console.log('Hello Fulcrum');
 }
 
 helloFulcrum();
