@@ -2,6 +2,10 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "removeComments": true,
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "outDir": "./lib",
     "strict": true
