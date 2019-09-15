@@ -1,14 +1,22 @@
 language: node_js
 node_js:
   - 12
+  - 11
+  - 10
+  - 8
+
 install:
   - npm i
-  - npm run prepublishOnly
-deploy:
-  install: true
-  skip_cleanup: true
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  on:
-    branch: master
+  - npm run test
+
+jobs:
+  include:
+    - stage: npm release
+      node_js: 12
+      deploy:
+      skip_cleanup: true
+      provider: npm
+      email: $NPM_EMAIL
+      api_key: $NPM_TOKEN
+      on:
+        branch: master
