@@ -1,15 +1,11 @@
 import * as figlet from 'figlet';
+import * as utils from 'util';
 
-function helloFulcrum() {
-  // tslint:disable-next-line: no-console
-  figlet('Fulcrum Rocks', function(err, data) {
-    if (err) {
-      console.log('Something went wrong...');
-      console.dir(err);
-      return;
-    }
-    console.log(data);
-  });
+const figletAsync = utils.promisify(figlet);
+
+async function helloFulcrum() {
+  const logo = await figletAsync('Fulcrum Rocks');
+  console.log(logo);
 }
 
 helloFulcrum();
