@@ -1,9 +1,12 @@
 {
   "name": "fulcrum-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fulcrum Rocks cli",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "bin": {
+    "fulcrum": "./bin/fulcrum.js"
+  },
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
@@ -34,5 +37,6 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "figlet": "^1.2.4"
-  }
+  },
+  "preferGlobal": true
 }
