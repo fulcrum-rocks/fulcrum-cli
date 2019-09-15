@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 12
+install:
+  - npm i
+  - npm run prepublishOnly
+deploy:
+  install: true
+  skip_cleanup: true
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  on:
+    branch: master

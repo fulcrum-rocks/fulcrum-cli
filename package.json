@@ -11,7 +11,8 @@
     "lint": "tslint -p tsconfig.json",
     "prepublishOnly": "npm test && npm run lint",
     "prepare": "npm run build",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "publish": "npm i"
   },
   "files": [
     "lib/**/*"
